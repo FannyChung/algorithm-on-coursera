@@ -1,0 +1,14 @@
+插入商品#insert into tb_items(i_ID ,i_storeID,i_name,i_info,i_state,i_price,i_startT,i_stopT,i_sell,i_remains) values ('I101110010','S1234','apple','welcome!',1,100.0,'08:00:00','18:00:00',0,100);
+按ID号删除商品#delete from tb_items where i_ID = 'I101110010';
+按ID号删除商品备份#delete from tb_items2 where i_ID = 'I101110010';
+查询所有商品#select * from tb_items;
+查询所有商品备份#select * from tb_items2;
+按ID查询商品#select * from tb_items  where i_ID = 'I101110010';
+按名称查询商品#select * from tb_items where i_name = 'apple';
+按ID号修改商品价格#update tb_items set i_price = 110.00 where i_ID = 'I101110010';
+按ID号修改商品信息#update tb_items set i_info = 'hello world' where i_ID = 'I101110010';
+按ID号修改商品名称#update tb_items set i_name = 'hello world' where i_ID = 'I101110010';
+按ID号修改商品交易时间#update tb_items set i_startT = '09:00:00' ,i_stopT = '19:00:00' where i_ID = 'I101110010';
+按ID号修改商品剩余量#update tb_items set i_remains = 250 where i_ID = 'I101110010';
+按ID号修改商品剩余量和销售量#update tb_items set i_sell = i_sell+5,i_remains=i_remains-5 where i_ID = 'I101110010';
+按ID号删除商品所有信息#delete from tb_items where i_ID = 'I101110010';

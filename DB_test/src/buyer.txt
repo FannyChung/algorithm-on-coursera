@@ -1,0 +1,7 @@
+根据ID登录时查找并调入用户信息#SELECT * FROM TB_ULGN WHERE U_ID = '1';
+根据EMAIL登录时查找用户 #SELECT * FROM TB_ULGN WHERE U_EMAIL = '1';
+根据电话号码登录时查找用户 #SELECT * FROM TB_ULGN WHERE U_PHONENO = '1';
+根据用户ID查看用户信息#SELECT * FROM TB_UINF WHERE U_ID='1';
+插入用户信息（触发器插入，用户登录表）#INSERT INTO TB_UINF values('alan','aaa','aaa','aaa','7',0,10,empty_blob());
+根据用户ID 修改部分用户信息#UPDATE TB_UINF SET U_NICKNAME='YAYA' WHERE U_ID=2;COMMIT;
+根据用户ID 删除部分用户信息#UPDATE TB_UINF SET U_NICKNAME=NULL WHERE U_ID=2;COMMIT;

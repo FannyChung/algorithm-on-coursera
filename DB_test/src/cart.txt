@@ -1,0 +1,6 @@
+新增进购物车#INSERT INTO tb_cart(Userid,Itemid,Counts,Price)  values('alan','I101110010',1,(select I_PRICE from TB_ITEMS where I_ID='I101110010'));
+查看是否已经存在该商品#SELECT * from tb_cart where UserId='alan' and ItemId='I101110010';
+增加一个物品#UPDATE tb_cart set Counts=Counts+1 where UserId='alan' and ItemId='I101110010';
+减少一个物品>0#Update tb_cart set Counts=Counts-1 where UserId='alan' and ItemId='I101110010';
+用户查看自己的购物车#SELECT * from tb_cart where UserId='alan';
+从购物车移除商品#DELETE from tb_cart where UserId='alan' and ItemId='I101110010';

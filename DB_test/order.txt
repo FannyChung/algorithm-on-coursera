@@ -1,0 +1,6 @@
+新增一条记录————生成订单#insert into tb_order (o_id, o_cid, o_cnum, o_time, o_sid, o_uid, o_stt,o_price) values  ('10000', '1', 10, systimestamp(0), '1', '1', 1,3.5);
+修改一条记录————修改订单状态#update tb_order   set o_stt = 2 where o_id = '10000'   and o_cid = '1'   and o_time = '29-8月-14 04.49.17 下午';
+删除某一条记录————取消订单#delete from tb_order where o_id = '10000'   and o_cid = '1';
+新增一条记录————生成订单详细信息#insert into tb_orderinfo  (oi_id, oi_addr, oi_tel, oi_cnee, oi_pc, oi_descr, oi_stt, oi_dtime,oi_price) values  ('10000',   '东南大学图书馆',   '01234512345',   '时鹏',   '211189',   '加急',   1,   systimestamp(0),   100.00);
+修改一条记录————修改订单信息状态#update tb_orderinfo set oi_stt = 2 where oi_id = '10000';
+删除某一条记录————取消详细订单#delete from tb_orderinfo where oi_id = '10000';

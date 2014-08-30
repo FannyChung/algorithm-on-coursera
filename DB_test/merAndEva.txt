@@ -1,0 +1,11 @@
+根据ID登录时查找商家 #SELECT * FROM TB_MLGN WHERE M_ID = '1';
+根据电话号码登录时查找商家 #SELECT * FROM TB_MLGN WHERE M_EMAIL = '1';
+根据电话号码登录时查找商家 #SELECT * FROM TB_MLGN WHERE M_PHONENO = '1';
+根据商家ID查看商家信息#SELECT * FROM TB_SELLER WHERE SELLERID='fifa';
+插入商家信息（触发器插入，商家登录表）#INSERT INTO TB_SELLER values('sellerid','seller','@email','158','code','cn',0,1,'home','welcome',empty_blob());
+根据商家ID 修改店面信息#UPDATE tb_seller SET storeFrontInfo='12345' WHERE SELLERID='fifa';
+根据商家ID 修改店面名称#UPDATE tb_seller SET STOREFRONTNAME='myhome' WHERE SELLERID='fifa';
+插入评价#insert into tb_comt values('I101110010','adfs','very good',5,to_date('2021/08/29','yyyy-mm-dd'),'fifa',0);
+插入商家#INSERT INTO tb_seller(sellerId,sellerName,sellerEmail,sellerPhone,sellerPwd,sellerAdr) values('fifa','shipeng2','shi@sina.com','15850668579','123','cn');
+查询所有评价#select * from tb_comt;
+查询所有商家#select * from tb_seller ;
