@@ -24,6 +24,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -33,7 +34,7 @@ import org.jvnet.substance.button.StandardButtonShaper;
 import org.jvnet.substance.painter.StandardGradientPainter;
 import org.jvnet.substance.skin.SubstanceBusinessBlackSteelLookAndFeel;
 import org.jvnet.substance.theme.SubstanceBottleGreenTheme;
-import org.jvnet.substance.watermark.SubstanceStripeWatermark;
+import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
 public class client extends Applet {
 	static {
@@ -47,9 +48,10 @@ public class client extends Applet {
 					.setCurrentTheme(new SubstanceBottleGreenTheme());
 			// 设置按钮外观
 			SubstanceLookAndFeel
-					.setCurrentButtonShaper(new StandardButtonShaper()); // 设置水印
+					.setCurrentButtonShaper(new StandardButtonShaper());
+			 // 设置水印
 			SubstanceLookAndFeel
-					.setCurrentWatermark(new SubstanceStripeWatermark());
+					.setCurrentWatermark(new SubstanceImageWatermark("SEU.jpg"));
 			// 设置边框
 			SubstanceLookAndFeel
 					.setCurrentBorderPainter(new StandardBorderPainter());
@@ -64,7 +66,7 @@ public class client extends Applet {
 	private ObjectOutputStream out;
 	private ObjectInputStream in;
 	private JComboBox<String> jcb1, jcb2;
-	private TextArea tf_name;
+	private JTextArea tf_name;
 	private File file;
 	private BufferedReader br;
 	private HashMap<String, String> map = new HashMap<String, String>();
@@ -73,7 +75,7 @@ public class client extends Applet {
 			"merAndEva.txt", "order.txt" };
 
 	private String msgBack;
-	private TextArea showText;
+	private JTextArea showText;
 
 	private void initUI() {
 		try {
@@ -103,8 +105,9 @@ public class client extends Applet {
 
 		});
 
-		tf_name = new TextArea(2, 80);
+		tf_name = new JTextArea(1, 80);
 		tf_name.setFont(new Font("黑体", Font.BOLD, 28));
+		tf_name.setOpaque(false);
 		JScrollPane js = new JScrollPane(tf_name);
 		JButton btn_ok = new JButton("确定");
 
@@ -153,7 +156,8 @@ public class client extends Applet {
 				}
 			}
 		});
-		showText = new TextArea(12, 70);
+		showText = new JTextArea(12, 70);
+		showText.setOpaque(false);
 		showText.setFont(new Font("黑体", Font.BOLD, 28));
 		JScrollPane showTextJS = new JScrollPane(showText);
 
